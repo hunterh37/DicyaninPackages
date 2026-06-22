@@ -44,6 +44,9 @@ Managing 3D entities and scenes in RealityKit applications.
 ### [DicyaninEntityDebugger](https://github.com/hunterh37/DicyaninEntityDebugger)
 A real-time SwiftUI debugging interface for inspecting RealityKit entity properties, transforms, and components.
 
+### [DicyaninEntityQueries](https://github.com/hunterh37/DicyaninEntityQueries)
+A reusable ECS query-caching layer for RealityKit/visionOS — runs scene queries once per frame and hands every system pre-built, parallel-indexed snapshots to read instead of re-querying.
+
 ### [DicyaninSharePlay](https://github.com/hunterh37/DicyaninSharePlay)
 Real-time synchronization of 3D content and game state across multiple devices via SharePlay.
 
@@ -54,6 +57,15 @@ Synchronizing 3D content across multiple Apple devices using MultipeerConnectivi
 
 ### [DicyaninLLMProviderKit](https://github.com/hunterh37/DicyaninLLMProviderKit)
 A unified Swift interface for LLM APIs — chat completions, image generation, and streaming — across multiple providers.
+
+### [DicyaninAssetPreloader](https://github.com/hunterh37/DicyaninAssetPreloader)
+Loads RealityKit assets ahead of time, caches the parsed base resources, and vends cheap clones on demand — so no model is parsed from disk on the main thread mid-experience. Dependency-free, `@MainActor` throughout.
+
+### [DicyaninSceneReconstruction](https://github.com/hunterh37/DicyaninSceneReconstruction)
+Wraps Apple's `SceneReconstructionProvider` into a clean service: start/stop scene reconstruction, get tracked mesh anchors and their `ModelEntity` chunks with real static colliders, track scan coverage, and raycast to the floor.
+
+### [DicyaninVFXBudget](https://github.com/hunterh37/DicyaninVFXBudget)
+A per-frame VFX budgeting layer for high-load visionOS scenes — caps live effect counts, rate-limits spawns, and FIFO ring-buffer evicts the oldest effect when a cap is exceeded, holding the 90 Hz frame budget when many effects are on screen at once.
 
 ---
 
