@@ -21,7 +21,7 @@ Hand tracking and interaction with 3D objects in visionOS applications.
 A clean, reusable interface for hand gesture detection in visionOS.
 
 ### [DicyaninMockHandTracking](https://github.com/hunterh37/DicyaninMockHandTracking)
-Simulated hand tracking for the visionOS simulator (where ARKit hand tracking isn't available). Write against one hand-pose source — mock in the simulator, live ARKit on device, no code changes.
+Simulated hand tracking for the visionOS simulator (where ARKit hand tracking isn't available). Write against one hand-pose source, mock in the simulator, live ARKit on device, no code changes.
 
 <img src="https://raw.githubusercontent.com/hunterh37/DicyaninMockHandTracking/main/Screenshots/control-panel.png" width="250" />
 
@@ -31,7 +31,7 @@ A world-anchored 3D virtual joystick rig for RealityKit on visionOS/iOS.
 <img src="https://raw.githubusercontent.com/hunterh37/DicyaninVirtualJoystick/main/Media/gamepad.png" width="250" />
 
 ### [DicyaninThumbController](https://github.com/hunterh37/DicyaninThumbController)
-Thumb-based joystick control using hand tracking — converts thumb movement into virtual joystick input via `DicyaninARKitSession`.
+Thumb-based joystick control using hand tracking, converts thumb movement into virtual joystick input via `DicyaninARKitSession`.
 
 <img src="https://github.com/user-attachments/assets/d0d9fef3-cdb1-4b9b-9209-c8b4ceefa032" width="250" />
 
@@ -45,27 +45,27 @@ Managing 3D entities and scenes in RealityKit applications.
 A real-time SwiftUI debugging interface for inspecting RealityKit entity properties, transforms, and components.
 
 ### [DicyaninEntityQueries](https://github.com/hunterh37/DicyaninEntityQueries)
-A reusable ECS query-caching layer for RealityKit/visionOS — runs scene queries once per frame and hands every system pre-built, parallel-indexed snapshots to read instead of re-querying.
+A reusable ECS query-caching layer for RealityKit/visionOS, runs scene queries once per frame and hands every system pre-built, parallel-indexed snapshots to read instead of re-querying.
 
 ### [DicyaninSharePlay](https://github.com/hunterh37/DicyaninSharePlay)
 Real-time synchronization of 3D content and game state across multiple devices via SharePlay.
 
 ### [DicyaninMultiPeer](https://github.com/hunterh37/DicyaninMultiPeer)
-Synchronizing 3D content across multiple Apple devices using MultipeerConnectivity — shared AR/VR experiences between visionOS and iOS.
+Synchronizing 3D content across multiple Apple devices using MultipeerConnectivity, shared AR/VR experiences between visionOS and iOS.
 
 <img src="https://raw.githubusercontent.com/hunterh37/DicyaninMultiPeer/master/assets/banner.png" width="250" />
 
 ### [DicyaninAssetPreloader](https://github.com/hunterh37/DicyaninAssetPreloader)
-Loads RealityKit assets ahead of time, caches the parsed base resources, and vends cheap clones on demand — so no model is parsed from disk on the main thread mid-experience. Dependency-free, `@MainActor` throughout.
+Loads RealityKit assets ahead of time, caches the parsed base resources, and vends cheap clones on demand, so no model is parsed from disk on the main thread mid-experience. Dependency-free, `@MainActor` throughout.
 
 ### [DicyaninSceneReconstruction](https://github.com/hunterh37/DicyaninSceneReconstruction)
 Wraps Apple's `SceneReconstructionProvider` into a clean service: start/stop scene reconstruction, get tracked mesh anchors and their `ModelEntity` chunks with real static colliders, track scan coverage, and raycast to the floor.
 
 ### [DicyaninVFXBudget](https://github.com/hunterh37/DicyaninVFXBudget)
-A per-frame VFX budgeting layer for high-load visionOS scenes — caps live effect counts, rate-limits spawns, and FIFO ring-buffer evicts the oldest effect when a cap is exceeded, holding the 90 Hz frame budget when many effects are on screen at once.
+A per-frame VFX budgeting layer for high-load visionOS scenes, caps live effect counts, rate-limits spawns, and FIFO ring-buffer evicts the oldest effect when a cap is exceeded, holding the 90 Hz frame budget when many effects are on screen at once.
 
 ### [ImmersiveTesting](https://github.com/hunterh37/immersivetesting)
-A framework for immersive unit testing on visionOS — drives headless scene-state verification so you can assert that entities actually land in the RealityKit graph, are independent clones, and behave correctly. Used as the test backbone across several Dicyanin packages.
+A framework for immersive unit testing on visionOS, drives headless scene-state verification so you can assert that entities actually land in the RealityKit graph, are independent clones, and behave correctly. Used as the test backbone across several Dicyanin packages.
 
 ---
 
@@ -94,7 +94,7 @@ dependencies: [
 
 ## ⚡ Quick Example
 
-Several packages compose cleanly — one shared ARKit session feeds hand tracking and scene reconstruction, while the asset preloader and VFX budget keep the frame budget intact:
+Several packages compose cleanly, one shared ARKit session feeds hand tracking and scene reconstruction, while the asset preloader and VFX budget keep the frame budget intact:
 
 ```swift
 import DicyaninARKitSession
@@ -127,13 +127,13 @@ HandTrackingProvider(session: session).onPinch { hand in
 
 ## 🚀 Built With These Packages
 
-We ship these packages for free — and run them in our own published visionOS apps on the App Store:
+We ship these packages for free, and run them in our own published visionOS apps on the App Store:
 
-### [CYBERZOMBIES](https://apps.apple.com/us/app/id6770111930) — powered by [DicyaninHandTracking](https://github.com/hunterh37/DicyaninHandTracking)
-Room-scale spatial combat where you raise your hands, lock on, and blast waves of cyber-infected enemies that spill out of your own walls — built on hand-driven aiming and `DicyaninARKitSession`.
+### [CYBERZOMBIES](https://apps.apple.com/us/app/id6770111930): powered by [DicyaninHandTracking](https://github.com/hunterh37/DicyaninHandTracking)
+Room-scale spatial combat where you raise your hands, lock on, and blast waves of cyber-infected enemies that spill out of your own walls, built on hand-driven aiming and `DicyaninARKitSession`.
 
-### [RealityMesh](https://apps.apple.com/us/app/id6474943391) — powered by [DicyaninSceneReconstruction](https://github.com/hunterh37/DicyaninSceneReconstruction)
+### [RealityMesh](https://apps.apple.com/us/app/id6474943391): powered by [DicyaninSceneReconstruction](https://github.com/hunterh37/DicyaninSceneReconstruction)
 Uses ARKit and the LiDAR Scanner to build a live mesh of your surroundings, then reskins your real room with customizable textures.
 
-### [Spatial Model Viewer](https://apps.apple.com/us/app/id6475698595) — powered by [DicyaninAssetPreloader](https://github.com/hunterh37/DicyaninAssetPreloader)
-Turns your space into a 3D modeling studio with glow and procedural shader effects — loading and cloning models on demand without parsing from disk on the main thread.
+### [Spatial Model Viewer](https://apps.apple.com/us/app/id6475698595): powered by [DicyaninAssetPreloader](https://github.com/hunterh37/DicyaninAssetPreloader)
+Turns your space into a 3D modeling studio with glow and procedural shader effects, loading and cloning models on demand without parsing from disk on the main thread.
