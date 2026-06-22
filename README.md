@@ -23,17 +23,17 @@ A clean, reusable interface for hand gesture detection in visionOS.
 ### [DicyaninMockHandTracking](https://github.com/hunterh37/DicyaninMockHandTracking)
 Simulated hand tracking for the visionOS simulator (where ARKit hand tracking isn't available). Write against one hand-pose source — mock in the simulator, live ARKit on device, no code changes.
 
-![DicyaninMockHandTracking](https://raw.githubusercontent.com/hunterh37/DicyaninMockHandTracking/main/Screenshots/control-panel.png)
+<img src="https://raw.githubusercontent.com/hunterh37/DicyaninMockHandTracking/main/Screenshots/control-panel.png" width="250" />
 
 ### [DicyaninVirtualJoystick](https://github.com/hunterh37/DicyaninVirtualJoystick)
 A world-anchored 3D virtual joystick rig for RealityKit on visionOS/iOS.
 
-<img src="https://raw.githubusercontent.com/hunterh37/DicyaninVirtualJoystick/main/Media/gamepad.png" width="480" />
+<img src="https://raw.githubusercontent.com/hunterh37/DicyaninVirtualJoystick/main/Media/gamepad.png" width="250" />
 
 ### [DicyaninThumbController](https://github.com/hunterh37/DicyaninThumbController)
 Thumb-based joystick control using hand tracking — converts thumb movement into virtual joystick input via `DicyaninARKitSession`.
 
-![DicyaninThumbController](https://github.com/user-attachments/assets/d0d9fef3-cdb1-4b9b-9209-c8b4ceefa032)
+<img src="https://github.com/user-attachments/assets/d0d9fef3-cdb1-4b9b-9209-c8b4ceefa032" width="250" />
 
 ### [DicyaninEntity](https://github.com/hunterh37/DicyaninEntity)
 A sophisticated, extensible custom RealityKit entity class for 3D content creation on visionOS.
@@ -53,7 +53,7 @@ Real-time synchronization of 3D content and game state across multiple devices v
 ### [DicyaninMultiPeer](https://github.com/hunterh37/DicyaninMultiPeer)
 Synchronizing 3D content across multiple Apple devices using MultipeerConnectivity — shared AR/VR experiences between visionOS and iOS.
 
-![DicyaninMultiPeer](https://raw.githubusercontent.com/hunterh37/DicyaninMultiPeer/master/assets/banner.png)
+<img src="https://raw.githubusercontent.com/hunterh37/DicyaninMultiPeer/master/assets/banner.png" width="250" />
 
 ### [DicyaninLLMProviderKit](https://github.com/hunterh37/DicyaninLLMProviderKit)
 A unified Swift interface for LLM APIs — chat completions, image generation, and streaming — across multiple providers.
