@@ -67,6 +67,9 @@ Wraps Apple's `SceneReconstructionProvider` into a clean service: start/stop sce
 ### [DicyaninVFXBudget](https://github.com/hunterh37/DicyaninVFXBudget)
 A per-frame VFX budgeting layer for high-load visionOS scenes — caps live effect counts, rate-limits spawns, and FIFO ring-buffer evicts the oldest effect when a cap is exceeded, holding the 90 Hz frame budget when many effects are on screen at once.
 
+### [ImmersiveTesting](https://github.com/hunterh37/immersivetesting)
+A framework for immersive unit testing on visionOS — drives headless scene-state verification so you can assert that entities actually land in the RealityKit graph, are independent clones, and behave correctly. Used as the test backbone across several Dicyanin packages.
+
 ---
 
 ## 🔗 Resources
