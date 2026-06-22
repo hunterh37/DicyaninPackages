@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="banner.png" alt="DicyaninLabs" width="100%" />
+</p>
+
 # Dicyanin Swift Packages
 
 Open-source Swift packages for **visionOS / RealityKit** development by [Dicyanin Labs](https://github.com/hunterh37).
