@@ -55,9 +55,6 @@ Synchronizing 3D content across multiple Apple devices using MultipeerConnectivi
 
 <img src="https://raw.githubusercontent.com/hunterh37/DicyaninMultiPeer/master/assets/banner.png" width="250" />
 
-### [DicyaninLLMProviderKit](https://github.com/hunterh37/DicyaninLLMProviderKit)
-A unified Swift interface for LLM APIs — chat completions, image generation, and streaming — across multiple providers.
-
 ### [DicyaninAssetPreloader](https://github.com/hunterh37/DicyaninAssetPreloader)
 Loads RealityKit assets ahead of time, caches the parsed base resources, and vends cheap clones on demand — so no model is parsed from disk on the main thread mid-experience. Dependency-free, `@MainActor` throughout.
 
@@ -92,3 +89,51 @@ dependencies: [
     .package(url: "https://github.com/hunterh37/DicyaninARKitSession.git", branch: "master")
 ]
 ```
+
+---
+
+## ⚡ Quick Example
+
+Several packages compose cleanly — one shared ARKit session feeds hand tracking and scene reconstruction, while the asset preloader and VFX budget keep the frame budget intact:
+
+```swift
+import DicyaninARKitSession
+import DicyaninHandTracking
+import DicyaninSceneReconstruction
+import DicyaninAssetPreloader
+import DicyaninVFXBudget
+
+// 1. One shared ARKit session powers all input + world sensing
+let session = DicyaninARKitSession.shared
+try await session.start()
+
+// 2. Mesh the room with LiDAR, with real static colliders
+let reconstruction = SceneReconstructionService(session: session)
+await reconstruction.start()
+
+// 3. Preload + clone heavy models off the main thread
+let blaster = try await AssetPreloader.shared.clone(named: "Blaster")
+
+// 4. Drive interaction from tracked hands
+HandTrackingProvider(session: session).onPinch { hand in
+    // 5. Spawn an effect only if we're under the per-frame VFX cap
+    if VFXBudget.shared.requestSpawn() {
+        spawnMuzzleFlash(at: hand.indexTip)
+    }
+}
+```
+
+---
+
+## 🚀 Built With These Packages
+
+We ship these packages for free — and run them in our own published visionOS apps on the App Store:
+
+### [CYBERZOMBIES](https://apps.apple.com/us/app/id6770111930) — powered by [DicyaninHandTracking](https://github.com/hunterh37/DicyaninHandTracking)
+Room-scale spatial combat where you raise your hands, lock on, and blast waves of cyber-infected enemies that spill out of your own walls — built on hand-driven aiming and `DicyaninARKitSession`.
+
+### [RealityMesh](https://apps.apple.com/us/app/id6474943391) — powered by [DicyaninSceneReconstruction](https://github.com/hunterh37/DicyaninSceneReconstruction)
+Uses ARKit and the LiDAR Scanner to build a live mesh of your surroundings, then reskins your real room with customizable textures.
+
+### [Spatial Model Viewer](https://apps.apple.com/us/app/id6475698595) — powered by [DicyaninAssetPreloader](https://github.com/hunterh37/DicyaninAssetPreloader)
+Turns your space into a 3D modeling studio with glow and procedural shader effects — loading and cloning models on demand without parsing from disk on the main thread.
