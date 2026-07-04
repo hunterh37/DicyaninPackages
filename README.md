@@ -64,6 +64,27 @@ Wraps Apple's `SceneReconstructionProvider` into a clean service: start/stop sce
 ### [DicyaninVFXBudget](https://github.com/hunterh37/DicyaninVFXBudget)
 A per-frame VFX budgeting layer for high-load visionOS scenes, caps live effect counts, rate-limits spawns, and FIFO ring-buffer evicts the oldest effect when a cap is exceeded, holding the 90 Hz frame budget when many effects are on screen at once.
 
+### [DicyaninGrabbableObject](https://github.com/hunterh37/DicyaninGrabbableObject)
+Realistic, physically-grounded object grabbing for RealityKit/visionOS. Add one component to an object and one to a hand, and the user can reach out, grab it at a configurable hold angle and grip point, and release into a customizable drop behavior (gravity, throw-velocity inheritance, freeze, or a hand-authored drop path).
+
+### [DicyaninRagdoll](https://github.com/hunterh37/DicyaninRagdoll)
+A production hybrid kinematic→physics skeletal ragdoll for RealityKit skinned models on visionOS. Builds invisible physics proxy bodies from a skinned mesh's skeleton that ride the playing animation while kinematic, then flip to dynamic on activation for a real ragdoll takeover. Ships with a SwiftUI debug/tuning lab.
+
+### [DicyaninHumanoidMesh](https://github.com/hunterh37/DicyaninHumanoidMesh)
+Procedural humanoid 3D shape and pose system for RealityKit on visionOS and iOS. Builds a rounded, clay-like humanoid figure from procedurally generated organic capsule meshes assembled into a true joint hierarchy, driven by named pose presets and interpolated pose transitions.
+
+### [DicyaninToonShader](https://github.com/hunterh37/DicyaninToonShader)
+Cel/toon shading with a black inverted-hull outline for RealityKit on Apple Vision Pro. Flag entities with a component, call one manager method, and the whole scene gets a quantized N·L cel ramp plus crisp outlines. Built on ShaderGraphCoder.
+
+### [DicyaninComicText3DEffect](https://github.com/hunterh37/DicyaninComicText3DEffect)
+A RealityKit component/system for popping comic-book-style 3D text effects on visionOS.
+
+### [DicyaninLabsMoCapRecording](https://github.com/hunterh37/DicyaninLabsMoCapRecording)
+Records ARKit full-body motion capture on iPhone, exports it as a portable `.arkitbodyanim` file, and plays it back to drive Mixamo-rigged human figures or 2D wireframe skeletons, including retargeting recorded ARKit joints onto a Mixamo humanoid rig.
+
+### [DicyaninSplash](https://github.com/hunterh37/DicyaninSplash)
+Reusable two-phase visionOS/iOS launch splash for RealityKit: a glitch studio title, cyber loading bar, holographic 3D title scene, and a wireframe cyber-green shader. Fully injectable, no bundled assets.
+
 ### [ImmersiveTesting](https://github.com/hunterh37/immersivetesting)
 A framework for immersive unit testing on visionOS, drives headless scene-state verification so you can assert that entities actually land in the RealityKit graph, are independent clones, and behave correctly. Used as the test backbone across several Dicyanin packages.
 
