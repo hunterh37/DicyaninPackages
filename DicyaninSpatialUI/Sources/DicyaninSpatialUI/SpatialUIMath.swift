@@ -66,6 +66,26 @@ public enum SpatialUIMath {
         return min(idx, count - 1)
     }
 
+    /// Clamps an index into 0..<count. Returns 0 for empty collections.
+    public static func clampIndex(_ index: Int, count: Int) -> Int {
+        guard count > 0 else { return 0 }
+        return min(max(index, 0), count - 1)
+    }
+
+    /// Local X center of item `index` in a centered horizontal row.
+    public static func rowOffsetX(index: Int, count: Int, itemWidth: Float, spacing: Float) -> Float {
+        let pitch = itemWidth + spacing
+        return (Float(index) - Float(count - 1) / 2) * pitch
+    }
+
+    /// Normalized 0...1 dial parameter from a local XY point. 0.5 points up, clockwise increases.
+    public static func dialParameter(localPoint: SIMD3<Float>, sweep: Float) -> Float {
+        guard sweep > .ulpOfOne else { return 0.5 }
+        // Angle from straight up, clockwise positive.
+        let angle = atan2(localPoint.x, localPoint.y)
+        return clamp01(angle / sweep + 0.5)
+    }
+
     /// Proximity 0...1 from a distance and activation radius (1 at distance 0).
     public static func proximity(distance: Float, activationRadius: Float) -> Float {
         guard activationRadius > .ulpOfOne else { return 0 }
