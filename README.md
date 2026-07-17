@@ -16,16 +16,17 @@ A collection of reusable visionOS Swift packages.
 | [DicyaninHandGesture](https://github.com/hunterh37/DicyaninHandGesture) | Hand gesture recording, recognition, and playback |
 | [DicyaninHandMenu](./DicyaninHandMenu) | Hand-anchored menu UI |
 | [DicyaninHomeDioramaScene](./DicyaninHomeDioramaScene) | Home diorama scene |
+| [DicyaninHUDAnchoredView](./DicyaninHUDAnchoredView) | Head-anchored HUD for RealityView attachments |
 | [DicyaninHumanoidMesh](./DicyaninHumanoidMesh) | Humanoid mesh and poses |
 | [DicyaninLabsMoCapRecording](./DicyaninLabsMoCapRecording) | Motion capture recording |
 | [DicyaninMapNavigation](./DicyaninMapNavigation) | Map navigation |
-| [DicyaninMetaballs](./DicyaninMetaballs) | Metaball rendering effects |
+| [DicyaninMetaballs](https://github.com/hunterh37/DicyaninMetaballs) | Metaball rendering effects |
 | [DicyaninMockHandTracking](./DicyaninMockHandTracking) | Mock hand tracking for testing |
 | [DicyaninRoomFX](./DicyaninRoomFX) | Room-scale visual effects |
 | [DicyaninSceneMovement](./DicyaninSceneMovement) | Scene movement utilities |
 | [DicyaninSceneReconstruction](./DicyaninSceneReconstruction) | Scene reconstruction utilities |
 | [DicyaninSimulatorInput](./DicyaninSimulatorInput) | Simulator input support |
-| [DicyaninSpatialUI](./DicyaninSpatialUI) | Spatial UI components |
+| [DicyaninSpatialUI](https://github.com/hunterh37/DicyaninSpatialUI) | Spatial UI components |
 | [DicyaninSplash](./DicyaninSplash) | Splash screen |
 | [DicyaninText3DFonts](./DicyaninText3DFonts) | 3D text fonts |
 | [DicyaninTextFX](./DicyaninTextFX) | Text visual effects |
