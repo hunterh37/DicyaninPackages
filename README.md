@@ -28,13 +28,11 @@ A collection of reusable visionOS Swift packages.
 | [DicyaninSimulatorInput](./DicyaninSimulatorInput) | Simulator input support |
 | [DicyaninSpatialUI](https://github.com/hunterh37/DicyaninSpatialUI) | Spatial UI components |
 | [DicyaninSplash](./DicyaninSplash) | Splash screen |
-| [DicyaninText3DFonts](./DicyaninText3DFonts) | 3D text fonts |
 | [DicyaninTextFX](./DicyaninTextFX) | Text visual effects |
 | [DicyaninToonShader](./DicyaninToonShader) | Toon shading |
 | [DicyaninVFXBudget](./DicyaninVFXBudget) | VFX budget management |
 | [DicyaninVirtualJoystick](./DicyaninVirtualJoystick) | Virtual joystick input |
 | [DicyaninWatchLink](./DicyaninWatchLink) | Apple Watch connectivity |
-| [ShaderGraphCoder](./ShaderGraphCoder) | ShaderGraph material authoring in code |
 
 ## Component Gallery
 
