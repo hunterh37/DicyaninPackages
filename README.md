@@ -6,32 +6,32 @@ A collection of reusable visionOS Swift packages.
 
 | Package | Description |
 |---------|-------------|
-| [DicyaninAssetPreloader](./DicyaninAssetPreloader) | Asset preloading utilities |
-| [DicyaninDeviceController](./DicyaninDeviceController) | Device controller input |
-| [DicyaninEntityQueries](./DicyaninEntityQueries) | Entity query system |
-| [DicyaninGamecenterWrapper](./DicyaninGamecenterWrapper) | Game Center integration wrapper |
-| [DicyaninGestureTipGhostHands](./DicyaninGestureTipGhostHands) | Ghost hand gesture tips |
-| [DicyaninGrabbableObject](./DicyaninGrabbableObject) | Grabbable object interactions |
+| [DicyaninAssetPreloader](https://github.com/hunterh37/DicyaninAssetPreloader) | Asset preloading utilities |
+| [DicyaninDeviceController](https://github.com/hunterh37/DicyaninDeviceController) | Device controller input |
+| [DicyaninEntityQueries](https://github.com/hunterh37/DicyaninEntityQueries) | Entity query system |
+| [DicyaninGamecenterWrapper](https://github.com/hunterh37/DicyaninGamecenterWrapper) | Game Center integration wrapper |
+| [DicyaninGestureTipGhostHands](https://github.com/hunterh37/DicyaninGestureTipGhostHands) | Ghost hand gesture tips |
+| [DicyaninGrabbableObject](https://github.com/hunterh37/DicyaninGrabbableObject) | Grabbable object interactions |
 | [DicyaninHandGesture](https://github.com/hunterh37/DicyaninHandGesture) | Hand gesture recording, recognition, and playback |
-| [DicyaninHandMenu](./DicyaninHandMenu) | Hand-anchored menu UI |
-| [DicyaninHomeDioramaScene](./DicyaninHomeDioramaScene) | Home diorama scene |
-| [DicyaninHUDAnchoredView](./DicyaninHUDAnchoredView) | Head-anchored HUD for RealityView attachments |
-| [DicyaninHumanoidMesh](./DicyaninHumanoidMesh) | Humanoid mesh and poses |
-| [DicyaninLabsMoCapRecording](./DicyaninLabsMoCapRecording) | Motion capture recording |
-| [DicyaninMapNavigation](./DicyaninMapNavigation) | Map navigation |
+| [DicyaninHandMenu](https://github.com/hunterh37/DicyaninHandMenu) | Hand-anchored menu UI |
+| [DicyaninHomeDioramaScene](https://github.com/hunterh37/DicyaninHomeDioramaScene) | Home diorama scene |
+| [DicyaninHUDAnchoredView](https://github.com/hunterh37/DicyaninHUDAnchoredView) | Head-anchored HUD for RealityView attachments |
+| [DicyaninHumanoidMesh](https://github.com/hunterh37/DicyaninHumanoidMesh) | Humanoid mesh and poses |
+| [DicyaninLabsMoCapRecording](https://github.com/hunterh37/DicyaninLabsMoCapRecording) | Motion capture recording |
+| [DicyaninMapNavigation](https://github.com/hunterh37/DicyaninMapNavigation) | Map navigation |
 | [DicyaninMetaballs](https://github.com/hunterh37/DicyaninMetaballs) | Metaball rendering effects |
-| [DicyaninMockHandTracking](./DicyaninMockHandTracking) | Mock hand tracking for testing |
-| [DicyaninRoomFX](./DicyaninRoomFX) | Room-scale visual effects |
-| [DicyaninSceneMovement](./DicyaninSceneMovement) | Scene movement utilities |
-| [DicyaninSceneReconstruction](./DicyaninSceneReconstruction) | Scene reconstruction utilities |
-| [DicyaninSimulatorInput](./DicyaninSimulatorInput) | Simulator input support |
+| [DicyaninMockHandTracking](https://github.com/hunterh37/DicyaninMockHandTracking) | Mock hand tracking for testing |
+| [DicyaninRoomFX](https://github.com/hunterh37/DicyaninRoomFX) | Room-scale visual effects |
+| [DicyaninSceneMovement](https://github.com/hunterh37/DicyaninSceneMovement) | Scene movement utilities |
+| [DicyaninSceneReconstruction](https://github.com/hunterh37/DicyaninSceneReconstruction) | Scene reconstruction utilities |
+| [DicyaninSimulatorInput](https://github.com/hunterh37/DicyaninSimulatorInput) | Simulator input support |
 | [DicyaninSpatialUI](https://github.com/hunterh37/DicyaninSpatialUI) | Spatial UI components |
-| [DicyaninSplash](./DicyaninSplash) | Splash screen |
-| [DicyaninTextFX](./DicyaninTextFX) | Text visual effects |
-| [DicyaninToonShader](./DicyaninToonShader) | Toon shading |
-| [DicyaninVFXBudget](./DicyaninVFXBudget) | VFX budget management |
-| [DicyaninVirtualJoystick](./DicyaninVirtualJoystick) | Virtual joystick input |
-| [DicyaninWatchLink](./DicyaninWatchLink) | Apple Watch connectivity |
+| [DicyaninSplash](https://github.com/hunterh37/DicyaninSplash) | Splash screen |
+| [DicyaninTextFX](https://github.com/hunterh37/DicyaninTextFX) | Text visual effects |
+| [DicyaninToonShader](https://github.com/hunterh37/DicyaninToonShader) | Toon shading |
+| [DicyaninVFXBudget](https://github.com/hunterh37/DicyaninVFXBudget) | VFX budget management |
+| [DicyaninVirtualJoystick](https://github.com/hunterh37/DicyaninVirtualJoystick) | Virtual joystick input |
+| [DicyaninWatchLink](https://github.com/hunterh37/DicyaninWatchLink) | Apple Watch connectivity |
 
 ## Component Gallery
 
