@@ -8,7 +8,6 @@ A collection of reusable visionOS Swift packages.
 |---------|-------------|
 | [DicyaninAssetPreloader](./DicyaninAssetPreloader) | Asset preloading utilities |
 | [DicyaninDeviceController](./DicyaninDeviceController) | Device controller input |
-| [DicyaninEntityManagement](./DicyaninEntityManagement) | Entity management framework |
 | [DicyaninEntityQueries](./DicyaninEntityQueries) | Entity query system |
 | [DicyaninGamecenterWrapper](./DicyaninGamecenterWrapper) | Game Center integration wrapper |
 | [DicyaninGestureTipGhostHands](./DicyaninGestureTipGhostHands) | Ghost hand gesture tips |
