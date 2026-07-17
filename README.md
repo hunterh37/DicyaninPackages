@@ -6,15 +6,34 @@ A collection of reusable visionOS Swift packages.
 
 | Package | Description |
 |---------|-------------|
-| [DicyaninHandGesture](https://github.com/hunterh37/DicyaninHandGesture) | Hand gesture recording, recognition, and playback |
 | [DicyaninAssetPreloader](./DicyaninAssetPreloader) | Asset preloading utilities |
+| [DicyaninDeviceController](./DicyaninDeviceController) | Device controller input |
 | [DicyaninEntityManagement](./DicyaninEntityManagement) | Entity management framework |
 | [DicyaninEntityQueries](./DicyaninEntityQueries) | Entity query system |
+| [DicyaninGamecenterWrapper](./DicyaninGamecenterWrapper) | Game Center integration wrapper |
+| [DicyaninGestureTipGhostHands](./DicyaninGestureTipGhostHands) | Ghost hand gesture tips |
 | [DicyaninGrabbableObject](./DicyaninGrabbableObject) | Grabbable object interactions |
+| [DicyaninHandGesture](https://github.com/hunterh37/DicyaninHandGesture) | Hand gesture recording, recognition, and playback |
+| [DicyaninHandMenu](./DicyaninHandMenu) | Hand-anchored menu UI |
+| [DicyaninHomeDioramaScene](./DicyaninHomeDioramaScene) | Home diorama scene |
+| [DicyaninHumanoidMesh](./DicyaninHumanoidMesh) | Humanoid mesh and poses |
+| [DicyaninLabsMoCapRecording](./DicyaninLabsMoCapRecording) | Motion capture recording |
+| [DicyaninMapNavigation](./DicyaninMapNavigation) | Map navigation |
+| [DicyaninMetaballs](./DicyaninMetaballs) | Metaball rendering effects |
 | [DicyaninMockHandTracking](./DicyaninMockHandTracking) | Mock hand tracking for testing |
+| [DicyaninRoomFX](./DicyaninRoomFX) | Room-scale visual effects |
+| [DicyaninSceneMovement](./DicyaninSceneMovement) | Scene movement utilities |
 | [DicyaninSceneReconstruction](./DicyaninSceneReconstruction) | Scene reconstruction utilities |
+| [DicyaninSimulatorInput](./DicyaninSimulatorInput) | Simulator input support |
+| [DicyaninSpatialUI](./DicyaninSpatialUI) | Spatial UI components |
+| [DicyaninSplash](./DicyaninSplash) | Splash screen |
+| [DicyaninText3DFonts](./DicyaninText3DFonts) | 3D text fonts |
+| [DicyaninTextFX](./DicyaninTextFX) | Text visual effects |
+| [DicyaninToonShader](./DicyaninToonShader) | Toon shading |
 | [DicyaninVFXBudget](./DicyaninVFXBudget) | VFX budget management |
 | [DicyaninVirtualJoystick](./DicyaninVirtualJoystick) | Virtual joystick input |
+| [DicyaninWatchLink](./DicyaninWatchLink) | Apple Watch connectivity |
+| [ShaderGraphCoder](./ShaderGraphCoder) | ShaderGraph material authoring in code |
 
 ## Component Gallery
 
@@ -58,3 +77,9 @@ writes PNGs.
 | Lava Lamp | Vortex | DNA Helix |
 |-----------|--------|-----------|
 | ![Lava Lamp](./docs/screenshots/metaball-preset-lavaLamp.png) | ![Vortex](./docs/screenshots/metaball-preset-vortex.png) | ![DNA Helix](./docs/screenshots/metaball-preset-dnaHelix.png) |
+
+---
+
+<p align="center">
+  <img src="banner.png" alt="DicyaninLabs" width="100%" />
+</p>
