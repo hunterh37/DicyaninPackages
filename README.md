@@ -1,178 +1,27 @@
-<p align="center">
-  <img src="banner.png" alt="DicyaninLabs" width="100%" />
-</p>
+# DicyaninPackages
 
-# Dicyanin Swift Packages
+A collection of reusable visionOS Swift packages.
 
-Open-source Swift packages for **visionOS / RealityKit** development by [Dicyanin Labs](https://github.com/hunterh37).
-A modular toolkit for hand tracking, gestures, input, entities, networking, and debugging on Apple Vision Pro.
+## Packages
 
----
+| Package | Description |
+|---------|-------------|
+| [DicyaninHandGesture](https://github.com/hunterh37/DicyaninHandGesture) | Hand gesture recording, recognition, and playback |
+| [DicyaninAssetPreloader](./DicyaninAssetPreloader) | Asset preloading utilities |
+| [DicyaninEntityManagement](./DicyaninEntityManagement) | Entity management framework |
+| [DicyaninEntityQueries](./DicyaninEntityQueries) | Entity query system |
+| [DicyaninGrabbableObject](./DicyaninGrabbableObject) | Grabbable object interactions |
+| [DicyaninMockHandTracking](./DicyaninMockHandTracking) | Mock hand tracking for testing |
+| [DicyaninSceneReconstruction](./DicyaninSceneReconstruction) | Scene reconstruction utilities |
+| [DicyaninVFXBudget](./DicyaninVFXBudget) | VFX budget management |
+| [DicyaninVirtualJoystick](./DicyaninVirtualJoystick) | Virtual joystick input |
 
-## 📦 Packages
+## Component Gallery
 
-### [DicyaninARKitSession](https://github.com/hunterh37/DicyaninARKitSession)
-A shared ARKit session manager that provides hand tracking to visionOS apps. The foundation other Dicyanin input packages build on.
-
-### [DicyaninHandTracking](https://github.com/hunterh37/DicyaninHandTracking)
-Hand tracking and interaction with 3D objects in visionOS applications.
-
-### [DicyaninHandGesture](https://github.com/hunterh37/DicyaninHandGesture)
-A clean, reusable interface for hand gesture detection in visionOS.
-
-### [DicyaninMockHandTracking](https://github.com/hunterh37/DicyaninMockHandTracking)
-Simulated hand tracking for the visionOS simulator (where ARKit hand tracking isn't available). Write against one hand-pose source, mock in the simulator, live ARKit on device, no code changes.
-
-<img src="https://raw.githubusercontent.com/hunterh37/DicyaninMockHandTracking/main/Screenshots/control-panel.png" width="250" />
-
-### [DicyaninVirtualJoystick](https://github.com/hunterh37/DicyaninVirtualJoystick)
-A world-anchored 3D virtual joystick rig for RealityKit on visionOS/iOS.
-
-<img src="https://raw.githubusercontent.com/hunterh37/DicyaninVirtualJoystick/main/Media/gamepad.png" width="250" />
-
-### [DicyaninThumbController](https://github.com/hunterh37/DicyaninThumbController)
-Thumb-based joystick control using hand tracking, converts thumb movement into virtual joystick input via `DicyaninARKitSession`.
-
-<img src="https://github.com/user-attachments/assets/d0d9fef3-cdb1-4b9b-9209-c8b4ceefa032" width="250" />
-
-### [DicyaninEntity](https://github.com/hunterh37/DicyaninEntity)
-A sophisticated, extensible custom RealityKit entity class for 3D content creation on visionOS.
-
-### [DicyaninEntityManagement](https://github.com/hunterh37/DicyaninEntityManagement)
-Managing 3D entities and scenes in RealityKit applications.
-
-### [DicyaninEntityDebugger](https://github.com/hunterh37/DicyaninEntityDebugger)
-A real-time SwiftUI debugging interface for inspecting RealityKit entity properties, transforms, and components.
-
-### [DicyaninEntityQueries](https://github.com/hunterh37/DicyaninEntityQueries)
-A reusable ECS query-caching layer for RealityKit/visionOS, runs scene queries once per frame and hands every system pre-built, parallel-indexed snapshots to read instead of re-querying.
-
-### [DicyaninSharePlay](https://github.com/hunterh37/DicyaninSharePlay)
-Real-time synchronization of 3D content and game state across multiple devices via SharePlay.
-
-### [DicyaninMultiPeer](https://github.com/hunterh37/DicyaninMultiPeer)
-Synchronizing 3D content across multiple Apple devices using MultipeerConnectivity, shared AR/VR experiences between visionOS and iOS.
-
-<img src="https://raw.githubusercontent.com/hunterh37/DicyaninMultiPeer/master/assets/banner.png" width="250" />
-
-### [DicyaninAssetPreloader](https://github.com/hunterh37/DicyaninAssetPreloader)
-Loads RealityKit assets ahead of time, caches the parsed base resources, and vends cheap clones on demand, so no model is parsed from disk on the main thread mid-experience. Dependency-free, `@MainActor` throughout.
-
-### [DicyaninSceneReconstruction](https://github.com/hunterh37/DicyaninSceneReconstruction)
-Wraps Apple's `SceneReconstructionProvider` into a clean service: start/stop scene reconstruction, get tracked mesh anchors and their `ModelEntity` chunks with real static colliders, track scan coverage, and raycast to the floor.
-
-### [DicyaninVFXBudget](https://github.com/hunterh37/DicyaninVFXBudget)
-A per-frame VFX budgeting layer for high-load visionOS scenes, caps live effect counts, rate-limits spawns, and FIFO ring-buffer evicts the oldest effect when a cap is exceeded, holding the 90 Hz frame budget when many effects are on screen at once.
-
-### [DicyaninGrabbableObject](https://github.com/hunterh37/DicyaninGrabbableObject)
-Realistic, physically-grounded object grabbing for RealityKit/visionOS. Add one component to an object and one to a hand, and the user can reach out, grab it at a configurable hold angle and grip point, and release into a customizable drop behavior (gravity, throw-velocity inheritance, freeze, or a hand-authored drop path).
-
-### [DicyaninRagdoll](https://github.com/hunterh37/DicyaninRagdoll)
-A production hybrid kinematic→physics skeletal ragdoll for RealityKit skinned models on visionOS. Builds invisible physics proxy bodies from a skinned mesh's skeleton that ride the playing animation while kinematic, then flip to dynamic on activation for a real ragdoll takeover. Ships with a SwiftUI debug/tuning lab.
-
-### [DicyaninHumanoidMesh](https://github.com/hunterh37/DicyaninHumanoidMesh)
-Procedural humanoid 3D shape and pose system for RealityKit on visionOS and iOS. Builds a rounded, clay-like humanoid figure from procedurally generated organic capsule meshes assembled into a true joint hierarchy, driven by named pose presets and interpolated pose transitions.
-
-### [DicyaninToonShader](https://github.com/hunterh37/DicyaninToonShader)
-Cel/toon shading with a black inverted-hull outline for RealityKit on Apple Vision Pro. Flag entities with a component, call one manager method, and the whole scene gets a quantized N·L cel ramp plus crisp outlines. Built on ShaderGraphCoder.
-
-### [DicyaninComicText3DEffect](https://github.com/hunterh37/DicyaninComicText3DEffect)
-A RealityKit component/system for popping comic-book-style 3D text effects on visionOS.
-
-### [DicyaninLabsMoCapRecording](https://github.com/hunterh37/DicyaninLabsMoCapRecording)
-Records ARKit full-body motion capture on iPhone, exports it as a portable `.arkitbodyanim` file, and plays it back to drive Mixamo-rigged human figures or 2D wireframe skeletons, including retargeting recorded ARKit joints onto a Mixamo humanoid rig.
-
-### [DicyaninSplash](https://github.com/hunterh37/DicyaninSplash)
-Reusable two-phase visionOS/iOS launch splash for RealityKit: a glitch studio title, cyber loading bar, holographic 3D title scene, and a wireframe cyber-green shader. Fully injectable, no bundled assets.
-
-### [ImmersiveTesting](https://github.com/hunterh37/immersivetesting)
-A framework for immersive unit testing on visionOS, drives headless scene-state verification so you can assert that entities actually land in the RealityKit graph, are independent clones, and behave correctly. Used as the test backbone across several Dicyanin packages.
-
----
-
-## 🔗 Resources
-
-- **Example projects:** [DicyaninPackagesExampleProjects](https://github.com/hunterh37/DicyaninPackagesExampleProjects)
-- **Website:** [Dicyanin Labs](https://dicyaninlabs.com)
-
-## 📥 Installation
-
-Add any package via Swift Package Manager in Xcode:
-
-```
-File → Add Package Dependencies… → paste the repo URL
-```
-
-Or in `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/hunterh37/DicyaninARKitSession.git", branch: "master")
-]
-```
-
----
-
-## ⚡ Quick Example
-
-Several packages compose cleanly, one shared ARKit session feeds hand tracking and scene reconstruction, while the asset preloader and VFX budget keep the frame budget intact:
-
-```swift
-import DicyaninARKitSession
-import DicyaninHandTracking
-import DicyaninSceneReconstruction
-import DicyaninAssetPreloader
-import DicyaninVFXBudget
-
-// 1. One shared ARKit session powers all input + world sensing
-let session = DicyaninARKitSession.shared
-try await session.start()
-
-// 2. Mesh the room with LiDAR, with real static colliders
-let reconstruction = SceneReconstructionService(session: session)
-await reconstruction.start()
-
-// 3. Preload + clone heavy models off the main thread
-let blaster = try await AssetPreloader.shared.clone(named: "Blaster")
-
-// 4. Drive interaction from tracked hands
-HandTrackingProvider(session: session).onPinch { hand in
-    // 5. Spawn an effect only if we're under the per-frame VFX cap
-    if VFXBudget.shared.requestSpawn() {
-        spawnMuzzleFlash(at: hand.indexTip)
-    }
-}
-```
-
----
-
-## 🚀 Built With These Packages
-
-We ship these packages for free, and run them in our own published visionOS apps on the App Store:
-
-### [CYBERZOMBIES](https://apps.apple.com/us/app/id6770111930): powered by [DicyaninHandTracking](https://github.com/hunterh37/DicyaninHandTracking)
-
-<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8f/4c/5a/8f4c5add-c887-4803-62f5-36fe134c4df5/AppIcon.lsr/512x512bb.jpg" width="100" />
-
-Room-scale spatial combat where you raise your hands, lock on, and blast waves of cyber-infected enemies that spill out of your own walls, built on hand-driven aiming and `DicyaninARKitSession`.
-
-### [RealityMesh](https://apps.apple.com/us/app/id6474943391): powered by [DicyaninSceneReconstruction](https://github.com/hunterh37/DicyaninSceneReconstruction)
-
-<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1e/b8/9b/1eb89b71-5d0b-f11f-cc22-ac723c722f98/AppIcon.lsr/512x512bb.jpg" width="100" />
-
-Uses ARKit and the LiDAR Scanner to build a live mesh of your surroundings, then reskins your real room with customizable textures.
-
-### [Spatial Model Viewer](https://apps.apple.com/us/app/id6475698595): powered by [DicyaninAssetPreloader](https://github.com/hunterh37/DicyaninAssetPreloader)
-
-<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a4/ca/3c/a4ca3c52-1768-d6fa-2f2b-4bd37dcde49c/AppIcon.lsr/512x512bb.jpg" width="100" />
-
-Turns your space into a 3D modeling studio with glow and procedural shader effects, loading and cloning models on demand without parsing from disk on the main thread.
-
----
-
-## 🖼 Component Gallery
-
-Screenshots below are rendered offscreen with RealityKit on macOS by the [`RenderGallery`](./RenderGallery) tool, which loads each macOS-buildable spatial component, renders it via `RealityRenderer`, and writes PNGs (`swift run RenderGallery`, `swift run MetaballGallery`).
+Screenshots below are rendered offscreen with RealityKit on macOS by the
+[`RenderGallery`](./RenderGallery) tool (`swift run RenderGallery`), which loads
+each macOS-buildable spatial component, renders it via `RealityRenderer`, and
+writes PNGs.
 
 ### DicyaninHumanoidMesh
 
@@ -184,12 +33,12 @@ Screenshots below are rendered offscreen with RealityKit on macOS by the [`Rende
 |-----------|---------|----------|
 | ![Yoga Tree](./docs/screenshots/humanoid-yoga-tree.png) | ![Dabbing](./docs/screenshots/humanoid-dabbing.png) | ![Big Wave](./docs/screenshots/humanoid-big-wave.png) |
 
-### DicyaninMetaballs
+### DicyaninSpatialUI
 
-| Two-Ball Merge | Cluster | Carved Hole |
-|----------------|---------|-------------|
-| ![Two-Ball Merge](./docs/screenshots/metaball-two-ball-merge.png) | ![Cluster](./docs/screenshots/metaball-cluster.png) | ![Carved Hole](./docs/screenshots/metaball-carved-hole.png) |
+| Curved Panel | Button | Toggle Button |
+|--------------|--------|---------------|
+| ![Curved Panel](./docs/screenshots/spatialui-curved-panel.png) | ![Button](./docs/screenshots/spatialui-button.png) | ![Toggle Button](./docs/screenshots/spatialui-toggle-button.png) |
 
-| Lava Lamp | Vortex | DNA Helix |
-|-----------|--------|-----------|
-| ![Lava Lamp](./docs/screenshots/metaball-preset-lavaLamp.png) | ![Vortex](./docs/screenshots/metaball-preset-vortex.png) | ![DNA Helix](./docs/screenshots/metaball-preset-dnaHelix.png) |
+| Slider | Radial Menu | Tooltip |
+|--------|-------------|---------|
+| ![Slider](./docs/screenshots/spatialui-slider.png) | ![Radial Menu](./docs/screenshots/spatialui-radial-menu.png) | ![Tooltip](./docs/screenshots/spatialui-tooltip.png) |

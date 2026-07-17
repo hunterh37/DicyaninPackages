@@ -8,7 +8,9 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../DicyaninHumanoidMesh"),
-        .package(path: "../DicyaninMetaballs")
+        .package(path: "../DicyaninMetaballs"),
+        .package(path: "../DicyaninSpatialUI"),
+        .package(path: "../DicyaninVirtualJoystick")
     ],
     targets: [
         .executableTarget(
@@ -19,9 +21,21 @@ let package = Package(
             ]
         ),
         .executableTarget(
+            name: "SpatialUIGallery",
+            dependencies: [
+                .product(name: "DicyaninSpatialUI", package: "DicyaninSpatialUI")
+            ]
+        ),
+        .executableTarget(
             name: "MetaballGallery",
             dependencies: [
                 .product(name: "DicyaninMetaballs", package: "DicyaninMetaballs")
+            ]
+        ),
+        .executableTarget(
+            name: "GamepadGallery",
+            dependencies: [
+                .product(name: "DicyaninVirtualJoystick", package: "DicyaninVirtualJoystick")
             ]
         )
     ]
