@@ -133,6 +133,10 @@ func run() async throws {
     try? FileManager.default.createDirectory(at: outDir, withIntermediateDirectories: true)
     let renderer = try OffscreenRenderer(size: 900)
 
+    // Warm-up: the first RealityRenderer frame comes back empty.
+    let warm = ModelEntity(mesh: .generateSphere(radius: 0.1), materials: [SimpleMaterial()])
+    _ = try renderer.render(entity: warm, cameraDistance: 1.0, target: [0, 0, 0])
+
     let scenes: [Scene] = [
         Scene(
             name: "two-ball-merge",
