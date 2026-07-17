@@ -167,3 +167,29 @@ Uses ARKit and the LiDAR Scanner to build a live mesh of your surroundings, then
 <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a4/ca/3c/a4ca3c52-1768-d6fa-2f2b-4bd37dcde49c/AppIcon.lsr/512x512bb.jpg" width="100" />
 
 Turns your space into a 3D modeling studio with glow and procedural shader effects, loading and cloning models on demand without parsing from disk on the main thread.
+
+---
+
+## 🖼 Component Gallery
+
+Screenshots below are rendered offscreen with RealityKit on macOS by the [`RenderGallery`](./RenderGallery) tool, which loads each macOS-buildable spatial component, renders it via `RealityRenderer`, and writes PNGs (`swift run RenderGallery`, `swift run MetaballGallery`).
+
+### DicyaninHumanoidMesh
+
+| A-Pose | T-Pose | Sitting |
+|--------|--------|---------|
+| ![A-Pose](./docs/screenshots/humanoid-a-pose.png) | ![T-Pose](./docs/screenshots/humanoid-t-pose.png) | ![Sitting](./docs/screenshots/humanoid-sitting.png) |
+
+| Yoga Tree | Dabbing | Big Wave |
+|-----------|---------|----------|
+| ![Yoga Tree](./docs/screenshots/humanoid-yoga-tree.png) | ![Dabbing](./docs/screenshots/humanoid-dabbing.png) | ![Big Wave](./docs/screenshots/humanoid-big-wave.png) |
+
+### DicyaninMetaballs
+
+| Two-Ball Merge | Cluster | Carved Hole |
+|----------------|---------|-------------|
+| ![Two-Ball Merge](./docs/screenshots/metaball-two-ball-merge.png) | ![Cluster](./docs/screenshots/metaball-cluster.png) | ![Carved Hole](./docs/screenshots/metaball-carved-hole.png) |
+
+| Lava Lamp | Vortex | DNA Helix |
+|-----------|--------|-----------|
+| ![Lava Lamp](./docs/screenshots/metaball-preset-lavaLamp.png) | ![Vortex](./docs/screenshots/metaball-preset-vortex.png) | ![DNA Helix](./docs/screenshots/metaball-preset-dnaHelix.png) |
