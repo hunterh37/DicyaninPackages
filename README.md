@@ -42,3 +42,9 @@ writes PNGs.
 | Slider | Radial Menu | Tooltip |
 |--------|-------------|---------|
 | ![Slider](./docs/screenshots/spatialui-slider.png) | ![Radial Menu](./docs/screenshots/spatialui-radial-menu.png) | ![Tooltip](./docs/screenshots/spatialui-tooltip.png) |
+
+### DicyaninVirtualJoystick
+
+| 3D Gamepad | Angled | Arcade Pillar |
+|------------|--------|---------------|
+| ![Gamepad](./docs/screenshots/gamepad3d.png) | ![Gamepad angled](./docs/screenshots/gamepad3d-angle.png) | ![Arcade pillar](./docs/screenshots/gamepad-pillar.png) |
