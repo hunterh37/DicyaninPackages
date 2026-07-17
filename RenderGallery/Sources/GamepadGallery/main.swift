@@ -1,12 +1,14 @@
 import Foundation
 import RealityKit
 import Metal
-import MetalKit
 import CoreGraphics
 import ImageIO
 import UniformTypeIdentifiers
 import simd
-import DicyaninHumanoidMesh
+#if canImport(AppKit)
+import AppKit
+#endif
+import DicyaninVirtualJoystick
 
 @MainActor
 final class OffscreenRenderer {
@@ -25,17 +27,14 @@ final class OffscreenRenderer {
 
     func makeTexture() -> MTLTexture {
         let desc = MTLTextureDescriptor.texture2DDescriptor(
-            pixelFormat: .rgba8Unorm,
-            width: size,
-            height: size,
-            mipmapped: false
-        )
+            pixelFormat: .rgba8Unorm, width: size, height: size, mipmapped: false)
         desc.usage = [.renderTarget, .shaderRead, .shaderWrite]
         desc.storageMode = .shared
         return device.makeTexture(descriptor: desc)!
     }
 
-    func render(entity: Entity, cameraDistance: Float, cameraHeight: Float, target: SIMD3<Float>) throws -> CGImage {
+    func render(entity: Entity, cameraDistance: Float, cameraHeight: Float,
+                target: SIMD3<Float>, orbit: Float) throws -> CGImage {
         let renderer = try RealityRenderer()
 
         let content = Entity()
@@ -52,8 +51,7 @@ final class OffscreenRenderer {
         fill.look(at: [0, 0, 0], from: [-3, 2, 2], relativeTo: nil)
         renderer.entities.append(fill)
 
-        let ibl = try? EnvironmentResource(equirectangular: OffscreenRenderer.gradientImage())
-        if let ibl {
+        if let ibl = try? EnvironmentResource(equirectangular: OffscreenRenderer.gradientImage()) {
             var iblc = ImageBasedLightComponent(source: .single(ibl), intensityExponent: 1.0)
             iblc.inheritsRotation = true
             let iblEntity = Entity()
@@ -63,29 +61,21 @@ final class OffscreenRenderer {
 
         let cam = PerspectiveCamera()
         cam.camera.fieldOfViewInDegrees = 40
-        let camPos = target + SIMD3<Float>(0, cameraHeight, cameraDistance)
+        let camPos = target + SIMD3<Float>(sin(orbit) * cameraDistance, cameraHeight, cos(orbit) * cameraDistance)
         cam.position = camPos
         cam.look(at: target, from: camPos, relativeTo: nil)
         renderer.activeCamera = cam
         renderer.entities.append(cam)
 
         let colorTex = makeTexture()
-
         let cmd = queue.makeCommandBuffer()!
-        let output = try RealityRenderer.CameraOutput(
-            .singleProjection(colorTexture: colorTex)
-        )
+        let output = try RealityRenderer.CameraOutput(.singleProjection(colorTexture: colorTex))
         try renderer.updateAndRender(
-            deltaTime: 0.1,
-            cameraOutput: output,
-            whenScheduled: { _ in },
-            onComplete: { _ in },
-            actionsBeforeRender: [],
-            actionsAfterRender: []
-        )
+            deltaTime: 0.1, cameraOutput: output,
+            whenScheduled: { _ in }, onComplete: { _ in },
+            actionsBeforeRender: [], actionsAfterRender: [])
         cmd.commit()
         cmd.waitUntilCompleted()
-
         return try OffscreenRenderer.cgImage(from: colorTex)
     }
 
@@ -127,30 +117,39 @@ func writePNG(_ image: CGImage, to url: URL) throws {
 
 @MainActor
 func run() throws {
-    let outDir = URL(fileURLWithPath: "output", isDirectory: true)
+    let outDir = URL(fileURLWithPath: "output/virtualjoystick", isDirectory: true)
     try? FileManager.default.createDirectory(at: outDir, withIntermediateDirectories: true)
     let renderer = try OffscreenRenderer(size: 900)
 
-    // Warm-up: the first RealityRenderer frame comes back empty.
-    let warm = ModelEntity(mesh: .generateSphere(radius: 0.1), materials: [SimpleMaterial()])
-    _ = try renderer.render(entity: warm, cameraDistance: 1.0, cameraHeight: 0.0, target: [0, 0, 0])
+    // Warm-up: the first RealityRenderer frame comes back empty, so render a
+    // throwaway before capturing the real shots.
+    let warm = ModelEntity(mesh: .generateSphere(radius: 0.05), materials: [SimpleMaterial()])
+    _ = try renderer.render(entity: warm, cameraDistance: 0.3, cameraHeight: 0.1, target: [0, 0, 0], orbit: 0)
 
-    let poses: [(PosePreset, String)] = [
-        (.aPose, "a-pose"),
-        (.tPose, "t-pose"),
-        (.sitting, "sitting"),
-        (.yogaTree, "yoga-tree"),
-        (.dabbing, "dabbing"),
-        (.bigWave, "big-wave")
-    ]
-    for (pose, name) in poses {
-        let entity = HumanoidEntity.create(pose: pose)
-        let img = try renderer.render(entity: entity, cameraDistance: 2.4, cameraHeight: 0.9,
-                                      target: [0, 0.9, 0])
-        let url = outDir.appendingPathComponent("humanoid-\(name).png")
-        try writePNG(img, to: url)
-        print("wrote \(url.lastPathComponent)")
-    }
+    let gamepad = Gamepad3DEntity.make(at: [0, 0, 0])
+    let g1 = try renderer.render(entity: gamepad, cameraDistance: 0.62, cameraHeight: 0.5,
+                                 target: [0, 0, 0.02], orbit: 0.25)
+    try writePNG(g1, to: outDir.appendingPathComponent("gamepad3d.png"))
+    print("wrote gamepad3d.png")
+
+    let gamepad2 = Gamepad3DEntity.make(at: [0, 0, 0])
+    let g2 = try renderer.render(entity: gamepad2, cameraDistance: 0.66, cameraHeight: 0.32,
+                                 target: [0, 0.02, 0.02], orbit: 0.7)
+    try writePNG(g2, to: outDir.appendingPathComponent("gamepad3d-angle.png"))
+    print("wrote gamepad3d-angle.png")
+
+    let pillar = GamepadPillarEntity.make(at: [0, 0.9, 0])
+    let p1 = try renderer.render(entity: pillar, cameraDistance: 2.1, cameraHeight: 1.1,
+                                 target: [0, 0.5, 0], orbit: 0.4)
+    try writePNG(p1, to: outDir.appendingPathComponent("gamepad-pillar.png"))
+    print("wrote gamepad-pillar.png")
+
+    let holo = PillarHologramEntity.make()
+    holo.isEnabled = true
+    let h1 = try renderer.render(entity: holo, cameraDistance: 0.34, cameraHeight: 0.16,
+                                 target: [0, 0, 0], orbit: 0.3)
+    try writePNG(h1, to: outDir.appendingPathComponent("pillar-hologram.png"))
+    print("wrote pillar-hologram.png")
 }
 
 try run()

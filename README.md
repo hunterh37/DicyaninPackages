@@ -42,3 +42,19 @@ writes PNGs.
 | Slider | Radial Menu | Tooltip |
 |--------|-------------|---------|
 | ![Slider](./docs/screenshots/spatialui-slider.png) | ![Radial Menu](./docs/screenshots/spatialui-radial-menu.png) | ![Tooltip](./docs/screenshots/spatialui-tooltip.png) |
+
+### DicyaninVirtualJoystick
+
+| 3D Gamepad | Angled | Arcade Pillar |
+|------------|--------|---------------|
+| ![Gamepad](./docs/screenshots/gamepad3d.png) | ![Gamepad angled](./docs/screenshots/gamepad3d-angle.png) | ![Arcade pillar](./docs/screenshots/gamepad-pillar.png) |
+
+### DicyaninMetaballs
+
+| Two-Ball Merge | Cluster | Carved Hole |
+|----------------|---------|-------------|
+| ![Two-Ball Merge](./docs/screenshots/metaball-two-ball-merge.png) | ![Cluster](./docs/screenshots/metaball-cluster.png) | ![Carved Hole](./docs/screenshots/metaball-carved-hole.png) |
+
+| Lava Lamp | Vortex | DNA Helix |
+|-----------|--------|-----------|
+| ![Lava Lamp](./docs/screenshots/metaball-preset-lavaLamp.png) | ![Vortex](./docs/screenshots/metaball-preset-vortex.png) | ![DNA Helix](./docs/screenshots/metaball-preset-dnaHelix.png) |
