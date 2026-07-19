@@ -35,10 +35,60 @@ A collection of reusable visionOS Swift packages.
 
 ## Component Gallery
 
-Screenshots below are rendered offscreen with RealityKit on macOS by the
-[`RenderGallery`](./RenderGallery) tool (`swift run RenderGallery`), which loads
-each macOS-buildable spatial component, renders it via `RealityRenderer`, and
-writes PNGs.
+Screenshots below are produced by the [`RenderGallery`](./RenderGallery) tool. Each
+macOS-buildable spatial component is rendered offscreen with RealityKit via
+`RealityRenderer` and written to PNG (`swift run <Package>Gallery`). Packages whose
+visuals are visionOS-only (ARKit hand tracking, scene reconstruction) expose a
+cross-platform preview entity that mirrors their real geometry. Pure logic and
+system-integration packages (networking, Game Center) are shown as schematic cards.
+
+### DicyaninAssetPreloader
+
+![Asset Preloader](./docs/screenshots/assetpreloader.png)
+
+### DicyaninDeviceController
+
+![Controllable scene](./docs/screenshots/devicecontroller-scene.png)
+
+### DicyaninEntityQueries
+
+Query matches highlighted (green) against non-matching entities (gray).
+
+![Entity Queries](./docs/screenshots/entityqueries-highlight.png)
+
+### DicyaninGamecenterWrapper
+
+![Game Center Wrapper](./docs/screenshots/gamecenter.png)
+
+### DicyaninGestureTipGhostHands
+
+| Twist | Pinch |
+|-------|-------|
+| ![Twist](./docs/screenshots/ghosthand-twist.png) | ![Pinch](./docs/screenshots/ghosthand-pinch.png) |
+
+### DicyaninGrabbableObject
+
+| Grabbable | Debug overlay |
+|-----------|---------------|
+| ![Grabbable cube](./docs/screenshots/grabbable-cube.png) | ![Debug overlay](./docs/screenshots/grabbable-debug.png) |
+
+### DicyaninHandGesture
+
+![Hand Gesture](./docs/screenshots/handgesture.png)
+
+### DicyaninHandMenu
+
+![Hand Menu](./docs/screenshots/handmenu-orb.png)
+
+### DicyaninHomeDioramaScene
+
+| Summer | Autumn | Winter |
+|--------|--------|--------|
+| ![Summer](./docs/screenshots/diorama-summer.png) | ![Autumn](./docs/screenshots/diorama-autumn.png) | ![Winter](./docs/screenshots/diorama-winter.png) |
+
+### DicyaninHUDAnchoredView
+
+![HUD Anchored View](./docs/screenshots/hudanchoredview.png)
 
 ### DicyaninHumanoidMesh
 
@@ -50,21 +100,15 @@ writes PNGs.
 |-----------|---------|----------|
 | ![Yoga Tree](./docs/screenshots/humanoid-yoga-tree.png) | ![Dabbing](./docs/screenshots/humanoid-dabbing.png) | ![Big Wave](./docs/screenshots/humanoid-big-wave.png) |
 
-### DicyaninSpatialUI
+### DicyaninLabsMoCapRecording
 
-| Curved Panel | Button | Toggle Button |
-|--------------|--------|---------------|
-| ![Curved Panel](./docs/screenshots/spatialui-curved-panel.png) | ![Button](./docs/screenshots/spatialui-button.png) | ![Toggle Button](./docs/screenshots/spatialui-toggle-button.png) |
+![MoCap skeleton](./docs/screenshots/mocap-skeleton.png)
 
-| Slider | Radial Menu | Tooltip |
-|--------|-------------|---------|
-| ![Slider](./docs/screenshots/spatialui-slider.png) | ![Radial Menu](./docs/screenshots/spatialui-radial-menu.png) | ![Tooltip](./docs/screenshots/spatialui-tooltip.png) |
+### DicyaninMapNavigation
 
-### DicyaninVirtualJoystick
-
-| 3D Gamepad | Angled | Arcade Pillar |
-|------------|--------|---------------|
-| ![Gamepad](./docs/screenshots/gamepad3d.png) | ![Gamepad angled](./docs/screenshots/gamepad3d-angle.png) | ![Arcade pillar](./docs/screenshots/gamepad-pillar.png) |
+| Top | Angle |
+|-----|-------|
+| ![Route top](./docs/screenshots/route-top.png) | ![Route angle](./docs/screenshots/route-angle.png) |
 
 ### DicyaninMetaballs
 
@@ -75,6 +119,86 @@ writes PNGs.
 | Lava Lamp | Vortex | DNA Helix |
 |-----------|--------|-----------|
 | ![Lava Lamp](./docs/screenshots/metaball-preset-lavaLamp.png) | ![Vortex](./docs/screenshots/metaball-preset-vortex.png) | ![DNA Helix](./docs/screenshots/metaball-preset-dnaHelix.png) |
+
+### DicyaninMockHandTracking
+
+Left hand open, right hand pinched.
+
+![Mock hands](./docs/screenshots/mockhands.png)
+
+### DicyaninRoomFX
+
+Portal reveal effect (jagged-rimmed portal disc).
+
+![Portal reveal](./docs/screenshots/roomfx-portal.png)
+
+### DicyaninSceneMovement
+
+| Walk Orb | Reticle | Laser |
+|----------|---------|-------|
+| ![Walk Orb](./docs/screenshots/movement-walk-orb.png) | ![Reticle](./docs/screenshots/movement-reticle.png) | ![Laser](./docs/screenshots/movement-laser.png) |
+
+### DicyaninSceneReconstruction
+
+![Scene Reconstruction](./docs/screenshots/scenereconstruction.png)
+
+### DicyaninSimulatorInput
+
+Full-body skeleton reconstructed from streamed pose input.
+
+![Skeleton](./docs/screenshots/siminput-skeleton.png)
+
+### DicyaninSpatialUI
+
+| Curved Panel | Button | Toggle Button |
+|--------------|--------|---------------|
+| ![Curved Panel](./docs/screenshots/spatialui-curved-panel.png) | ![Button](./docs/screenshots/spatialui-button.png) | ![Toggle Button](./docs/screenshots/spatialui-toggle-button.png) |
+
+| Slider | Radial Menu | Tooltip |
+|--------|-------------|---------|
+| ![Slider](./docs/screenshots/spatialui-slider.png) | ![Radial Menu](./docs/screenshots/spatialui-radial-menu.png) | ![Tooltip](./docs/screenshots/spatialui-tooltip.png) |
+
+### DicyaninSplash
+
+| Cyber Green | Cyan | Magenta |
+|-------------|------|---------|
+| ![Cyber Green](./docs/screenshots/splash-cybergreen.png) | ![Cyan](./docs/screenshots/splash-cyan.png) | ![Magenta](./docs/screenshots/splash-magenta.png) |
+
+### DicyaninTextFX
+
+| Neon | Gold | Chrome |
+|------|------|--------|
+| ![Neon](./docs/screenshots/textfx-neon.png) | ![Gold](./docs/screenshots/textfx-gold.png) | ![Chrome](./docs/screenshots/textfx-chrome.png) |
+
+| Candy (arc) | Graffiti |
+|-------------|----------|
+| ![Candy](./docs/screenshots/textfx-candy.png) | ![Graffiti](./docs/screenshots/textfx-graffiti.png) |
+
+### DicyaninToonShader
+
+| Arcade | Film Noir | Game Boy |
+|--------|-----------|----------|
+| ![Arcade](./docs/screenshots/toon-arcade.png) | ![Film Noir](./docs/screenshots/toon-filmnoir.png) | ![Game Boy](./docs/screenshots/toon-gameboy.png) |
+
+| Psychedelic | Rubber Hose | Thermal |
+|-------------|-------------|---------|
+| ![Psychedelic](./docs/screenshots/toon-psychedelic.png) | ![Rubber Hose](./docs/screenshots/toon-rubberhose.png) | ![Thermal](./docs/screenshots/toon-thermal.png) |
+
+### DicyaninVFXBudget
+
+Spawn requests gated to a per-category cap; admitted entities laid out in a ring.
+
+![VFX Budget](./docs/screenshots/vfxbudget-ring.png)
+
+### DicyaninVirtualJoystick
+
+| 3D Gamepad | Angled | Arcade Pillar |
+|------------|--------|---------------|
+| ![Gamepad](./docs/screenshots/gamepad3d.png) | ![Gamepad angled](./docs/screenshots/gamepad3d-angle.png) | ![Arcade pillar](./docs/screenshots/gamepad-pillar.png) |
+
+### DicyaninWatchLink
+
+![Watch Link](./docs/screenshots/watchlink.png)
 
 ---
 
